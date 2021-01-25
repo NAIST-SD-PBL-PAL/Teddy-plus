@@ -77,4 +77,4 @@ rm -r */
 ## echo or run tatts scrip
 
 # Calling shell script that runs bokeh visualization
-./CallBokeh.sh $location
+./CallBokeh.sh $2
