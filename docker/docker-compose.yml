@@ -1,0 +1,22 @@
+services:
+  elasticsearch:
+    image: elasticsearch:2.2.0
+    container_name: esdb
+    environment:
+      - node.name=esdb
+      - cluster.name=teddy-linux
+      - discovery.seed_hosts=ted
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+  ted-client:
+    image: meandthefirefly/teddy-client
+    container_name: ted
+    environment:
+      - node.name=ted
+      - discovery.seed_hosts=esdb
+      - bootstrap.memory_lock=true
+    entrypoint: ["/bin/sh","-c"]
+    command:
+    - |
+      /home/teddy/Teddy-plus/detection-mode/AutoRun.sh https://github.com/NAIST-SD-PBL-PAL/Teddy-plus.git /home/teddy/results repo 
