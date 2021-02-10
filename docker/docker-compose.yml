@@ -32,9 +32,9 @@ services:
     command:
     - |
       /home/teddy/Teddy-plus/detection-mode/AutoRun.sh https://github.com/gqlo/data_mining.git /home/teddy/results repo
-      cat /home/teddy/results/*
     volumes:
       - csv_data:/home/teddy/results
+
 volumes:
   csv_data:
     driver: local 
