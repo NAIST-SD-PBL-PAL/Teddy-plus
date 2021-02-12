@@ -47,6 +47,14 @@ A repo for the Teddy tool.
 	- directory for the result CSV files from Siamese to be saved, NOT within THE REPO (absolute path recommended)
 	- name for the Elasticsearch index of the repo (no whitespace allowed)
 	- **Example: `$ ./AutoRun https://github.com/pallets/flask.git /home/flask-results flask`**
-4. Finally, a file named `myplot.html` will be created here. This is the final visualization of detection mode. Move it to wherever you like. Use a web browswer (Google Chrome is recommended) to view the file.
-5. NOTE: Detection mode takes a considerable amount of time to complete depending on the repository's size and number of commits present.
+4. (Optional) You can also specify the interval of commits using `-a` and `-b`.
+	- **Example: If you would like to collect the commits after `2011/01/01`:**
+		`$ ./AutoRun https://github.com/pallets/flask.git /home/flask-results flask -a "2011/01/01"`
+	- **Example: If you would like to collect the commits before `2011/01/01`:**
+		`$ ./AutoRun https://github.com/pallets/flask.git /home/flask-results flask -b "2011/01/01"`
+	- **Example: If you would like to collect the commits between `2011/01/01` and `2020/01/01`:**
+		`$ ./AutoRun https://github.com/pallets/flask.git /home/flask-results flask -a "2011/01/01" -b "2020/01/01"`
+	**If Teddy-plus cannot get any commits, it shows that message, then please check your specified format is correct or not. : `There is no commits.`**
+5. Finally, a file named `myplot.html` will be created here. This is the final visualization of detection mode. Move it to wherever you like. Use a web browswer (Google Chrome is recommended) to view the file.
+6. NOTE: Detection mode takes a considerable amount of time to complete depending on the repository's size and number of commits present.
 
