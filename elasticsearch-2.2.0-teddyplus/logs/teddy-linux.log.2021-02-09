@@ -1,0 +1,19 @@
+[2021-02-09 09:52:06,035][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2021-02-09 09:52:06,848][INFO ][node                     ] [default-node] version[2.2.0], pid[75], build[8ff36d1/2016-01-27T13:32:39Z]
+[2021-02-09 09:52:06,849][INFO ][node                     ] [default-node] initializing ...
+[2021-02-09 09:52:08,535][INFO ][plugins                  ] [default-node] modules [lang-expression, lang-groovy], plugins [], sites []
+[2021-02-09 09:52:08,592][INFO ][env                      ] [default-node] using [1] data paths, mounts [[/mnt/c (C:\)]], net usable_space [351.4gb], net total_space [476.1gb], spins? [possibly], types [drvfs]
+[2021-02-09 09:52:08,594][INFO ][env                      ] [default-node] heap size [989.8mb], compressed ordinary object pointers [true]
+[2021-02-09 09:52:12,214][INFO ][node                     ] [default-node] initialized
+[2021-02-09 09:52:12,215][INFO ][node                     ] [default-node] starting ...
+[2021-02-09 09:52:12,398][INFO ][transport                ] [default-node] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2021-02-09 09:52:12,422][INFO ][discovery                ] [default-node] teddy-linux/a46KAUtRTBiH4bA-xLK7Ng
+[2021-02-09 09:52:17,009][INFO ][cluster.service          ] [default-node] new_master {default-node}{a46KAUtRTBiH4bA-xLK7Ng}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2021-02-09 09:52:17,133][INFO ][http                     ] [default-node] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2021-02-09 09:52:17,136][INFO ][node                     ] [default-node] started
+[2021-02-09 09:52:17,268][INFO ][gateway                  ] [default-node] recovered [1] indices into cluster_state
+[2021-02-09 09:52:18,591][INFO ][cluster.routing.allocation] [default-node] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[python-patterns][0]] ...]).
+[2021-02-09 22:51:24,087][INFO ][node                     ] [default-node] stopping ...
+[2021-02-09 22:51:24,165][INFO ][node                     ] [default-node] stopped
+[2021-02-09 22:51:24,165][INFO ][node                     ] [default-node] closing ...
+[2021-02-09 22:51:24,174][INFO ][node                     ] [default-node] closed
