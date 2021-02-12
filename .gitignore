@@ -15,3 +15,5 @@ elasticsearch-2.2.0-linux/
 
 detection-mode/idiomatic.csv
 detection-mode/nonidiomatic.csv
+detection-mode/nonidiomatic.csv
+detection-mode/idiomatic.csv
