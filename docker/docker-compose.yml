@@ -32,7 +32,7 @@ services:
     entrypoint: ["/bin/sh","-c"]
     command:
     - |
-      /home/teddy/Teddy-plus/detection-mode/AutoRun.sh ${URL} /home/teddy/results repo
+      /home/teddy/Teddy-plus/detection-mode/AutoRun.sh ${URL} /home/teddy/results repo ${INTERVAL}
     volumes:
       - csv_data:/home/teddy/results
 
