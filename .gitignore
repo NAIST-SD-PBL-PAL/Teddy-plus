@@ -7,3 +7,11 @@ webapp/config.properties
 .idea/misc.xml
 node_modules
 
+# Ignore the change made in the ES database
+elasticsearch-2.2.0-windows/
+elasticsearch-2.2.0-linux/
+
+*.st
+
+detection-mode/idiomatic.csv
+detection-mode/nonidiomatic.csv

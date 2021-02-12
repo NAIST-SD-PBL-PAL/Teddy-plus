@@ -1,0 +1,234 @@
+[2021-02-12 14:45:52,528][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2021-02-12 14:45:52,730][INFO ][node                     ] [default-node] version[2.2.0], pid[165], build[8ff36d1/2016-01-27T13:32:39Z]
+[2021-02-12 14:45:52,731][INFO ][node                     ] [default-node] initializing ...
+[2021-02-12 14:45:53,041][INFO ][plugins                  ] [default-node] modules [lang-expression, lang-groovy], plugins [], sites []
+[2021-02-12 14:45:53,068][INFO ][env                      ] [default-node] using [1] data paths, mounts [[/mnt/c (C:\)]], net usable_space [352gb], net total_space [476.1gb], spins? [possibly], types [drvfs]
+[2021-02-12 14:45:53,068][INFO ][env                      ] [default-node] heap size [989.8mb], compressed ordinary object pointers [true]
+[2021-02-12 14:45:54,475][INFO ][node                     ] [default-node] initialized
+[2021-02-12 14:45:54,476][INFO ][node                     ] [default-node] starting ...
+[2021-02-12 14:45:54,546][INFO ][transport                ] [default-node] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2021-02-12 14:45:54,555][INFO ][discovery                ] [default-node] teddy-linux/-lkhYOe8SaKw5A9tAAwLLQ
+[2021-02-12 14:45:59,075][INFO ][cluster.service          ] [default-node] new_master {default-node}{-lkhYOe8SaKw5A9tAAwLLQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2021-02-12 14:45:59,105][INFO ][http                     ] [default-node] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2021-02-12 14:45:59,106][INFO ][node                     ] [default-node] started
+[2021-02-12 14:45:59,150][INFO ][gateway                  ] [default-node] recovered [1] indices into cluster_state
+[2021-02-12 14:45:59,559][INFO ][cluster.routing.allocation] [default-node] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[python-patterns][0]] ...]).
+[2021-02-12 15:08:08,076][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2021-02-12 15:08:08,244][INFO ][node                     ] [default-node] version[2.2.0], pid[384], build[8ff36d1/2016-01-27T13:32:39Z]
+[2021-02-12 15:08:08,244][INFO ][node                     ] [default-node] initializing ...
+[2021-02-12 15:08:08,537][INFO ][plugins                  ] [default-node] modules [lang-expression, lang-groovy], plugins [], sites []
+[2021-02-12 15:08:08,551][INFO ][env                      ] [default-node] using [1] data paths, mounts [[/mnt/c (C:\)]], net usable_space [352gb], net total_space [476.1gb], spins? [possibly], types [drvfs]
+[2021-02-12 15:08:08,552][INFO ][env                      ] [default-node] heap size [989.8mb], compressed ordinary object pointers [true]
+[2021-02-12 15:08:09,656][INFO ][node                     ] [default-node] initialized
+[2021-02-12 15:08:09,657][INFO ][node                     ] [default-node] starting ...
+[2021-02-12 15:08:09,725][INFO ][transport                ] [default-node] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2021-02-12 15:08:09,734][INFO ][discovery                ] [default-node] teddy-linux/qPOa4mG8S0-Nt8izs5iOqw
+[2021-02-12 15:08:13,518][WARN ][discovery.zen.ping.unicast] [default-node] failed to send ping to [{#zen_unicast_6#}{::1}{[::1]:9300}]
+ReceiveTimeoutTransportException[[][[::1]:9300][internal:discovery/zen/unicast] request_id [2] timed out after [3751ms]]
+	at org.elasticsearch.transport.TransportService$TimeoutHandler.run(TransportService.java:645)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2021-02-12 15:08:14,257][INFO ][cluster.service          ] [default-node] new_master {default-node}{qPOa4mG8S0-Nt8izs5iOqw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2021-02-12 15:08:14,280][INFO ][http                     ] [default-node] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2021-02-12 15:08:14,280][INFO ][node                     ] [default-node] started
+[2021-02-12 15:08:14,314][INFO ][gateway                  ] [default-node] recovered [1] indices into cluster_state
+[2021-02-12 15:08:14,550][INFO ][cluster.routing.allocation] [default-node] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[python-patterns][0]] ...]).
+[2021-02-12 15:08:14,999][WARN ][discovery.zen.ping.unicast] [default-node] failed to send ping to [{#zen_unicast_6#}{::1}{[::1]:9300}]
+ReceiveTimeoutTransportException[[][[::1]:9300][internal:discovery/zen/unicast] request_id [4] timed out after [3750ms]]
+	at org.elasticsearch.transport.TransportService$TimeoutHandler.run(TransportService.java:645)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[2021-02-12 15:15:22,452][INFO ][node                     ] [default-node] stopping ...
+[2021-02-12 15:15:22,452][INFO ][node                     ] [default-node] stopping ...
+[2021-02-12 15:15:22,492][INFO ][node                     ] [default-node] stopped
+[2021-02-12 15:15:22,492][INFO ][node                     ] [default-node] closing ...
+[2021-02-12 15:15:22,493][INFO ][node                     ] [default-node] stopped
+[2021-02-12 15:15:22,494][INFO ][node                     ] [default-node] closing ...
+[2021-02-12 15:15:22,500][INFO ][node                     ] [default-node] closed
+[2021-02-12 15:15:22,500][INFO ][node                     ] [default-node] closed
+[2021-02-12 15:15:54,944][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2021-02-12 15:15:55,147][INFO ][node                     ] [default-node] version[2.2.0], pid[527], build[8ff36d1/2016-01-27T13:32:39Z]
+[2021-02-12 15:15:55,148][INFO ][node                     ] [default-node] initializing ...
+[2021-02-12 15:15:55,586][INFO ][plugins                  ] [default-node] modules [lang-expression, lang-groovy], plugins [], sites []
+[2021-02-12 15:15:55,601][INFO ][env                      ] [default-node] using [1] data paths, mounts [[/mnt/c (C:\)]], net usable_space [352gb], net total_space [476.1gb], spins? [possibly], types [drvfs]
+[2021-02-12 15:15:55,601][INFO ][env                      ] [default-node] heap size [989.8mb], compressed ordinary object pointers [true]
+[2021-02-12 15:15:57,039][INFO ][node                     ] [default-node] initialized
+[2021-02-12 15:15:57,039][INFO ][node                     ] [default-node] starting ...
+[2021-02-12 15:15:57,096][INFO ][transport                ] [default-node] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2021-02-12 15:15:57,105][INFO ][discovery                ] [default-node] teddy-linux/3k3Fb0hXRiehBTpe7iGFXQ
+[2021-02-12 15:16:01,628][INFO ][cluster.service          ] [default-node] new_master {default-node}{3k3Fb0hXRiehBTpe7iGFXQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2021-02-12 15:16:01,657][INFO ][http                     ] [default-node] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2021-02-12 15:16:01,658][INFO ][node                     ] [default-node] started
+[2021-02-12 15:16:01,705][INFO ][gateway                  ] [default-node] recovered [1] indices into cluster_state
+[2021-02-12 15:16:02,068][INFO ][cluster.routing.allocation] [default-node] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[python-patterns][0]] ...]).
+[2021-02-12 15:16:20,999][INFO ][node                     ] [default-node] stopping ...
+[2021-02-12 15:16:21,018][INFO ][node                     ] [default-node] stopped
+[2021-02-12 15:16:21,018][INFO ][node                     ] [default-node] closing ...
+[2021-02-12 15:16:21,022][INFO ][node                     ] [default-node] closed
+[2021-02-12 16:26:56,386][WARN ][bootstrap                ] unable to install syscall filter: seccomp unavailable: CONFIG_SECCOMP not compiled into kernel, CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER are needed
+[2021-02-12 16:26:56,567][INFO ][node                     ] [default-node] version[2.2.0], pid[295], build[8ff36d1/2016-01-27T13:32:39Z]
+[2021-02-12 16:26:56,568][INFO ][node                     ] [default-node] initializing ...
+[2021-02-12 16:26:56,872][INFO ][plugins                  ] [default-node] modules [lang-expression, lang-groovy], plugins [], sites []
+[2021-02-12 16:26:56,888][INFO ][env                      ] [default-node] using [1] data paths, mounts [[/mnt/c (C:\)]], net usable_space [351.9gb], net total_space [476.1gb], spins? [possibly], types [drvfs]
+[2021-02-12 16:26:56,888][INFO ][env                      ] [default-node] heap size [989.8mb], compressed ordinary object pointers [true]
+[2021-02-12 16:26:58,063][INFO ][node                     ] [default-node] initialized
+[2021-02-12 16:26:58,064][INFO ][node                     ] [default-node] starting ...
+[2021-02-12 16:26:58,119][INFO ][transport                ] [default-node] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2021-02-12 16:26:58,125][INFO ][discovery                ] [default-node] teddy-linux/2uAA3wqDS_-FoOR4DDitCA
+[2021-02-12 16:27:02,642][INFO ][cluster.service          ] [default-node] new_master {default-node}{2uAA3wqDS_-FoOR4DDitCA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2021-02-12 16:27:02,666][INFO ][http                     ] [default-node] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2021-02-12 16:27:02,667][INFO ][node                     ] [default-node] started
+[2021-02-12 16:27:02,716][INFO ][gateway                  ] [default-node] recovered [1] indices into cluster_state
+[2021-02-12 16:27:02,980][INFO ][cluster.routing.allocation] [default-node] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[python-patterns][0]] ...]).
+[2021-02-12 16:30:13,863][DEBUG][action.search.type       ] [default-node] [python-patterns][0], node[2uAA3wqDS_-FoOR4DDitCA], [P], v[20], s[STARTED], a[id=OlpUF_AST2yB-2GPon6Svg]: Failed to execute [org.elasticsearch.action.search.SearchRequest@1d4ed7d7]
+RemoteTransportException[[default-node][127.0.0.1:9300][indices:data/read/search[phase/query+fetch]]]; nested: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"id:￠ﾸﾖ￠ﾸﾄ","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: NumberFormatException[For input string: "￠ﾸﾖ￠ﾸﾄ"];
+Caused by: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"id:￠ﾸﾖ￠ﾸﾄ","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: NumberFormatException[For input string: "￠ﾸﾖ￠ﾸﾄ"];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:853)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:653)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:618)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:461)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:392)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:389)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "￠ﾸﾖ￠ﾸﾄ"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.parseLong(Long.java:631)
+	at org.elasticsearch.index.mapper.core.NumberFieldMapper.parseLongValue(NumberFieldMapper.java:296)
+	at org.elasticsearch.index.mapper.core.LongFieldMapper$LongFieldType.indexedValueForSearch(LongFieldMapper.java:164)
+	at org.elasticsearch.index.mapper.MappedFieldType.createTerm(MappedFieldType.java:452)
+	at org.elasticsearch.index.mapper.MappedFieldType.termQuery(MappedFieldType.java:456)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.getFieldQuerySingle(MapperQueryParser.java:250)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.getFieldQuery(MapperQueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.handleBareTokenQuery(QueryParserBase.java:856)
+	at org.apache.lucene.queryparser.classic.QueryParser.Term(QueryParser.java:348)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:247)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:160)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:118)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.parse(MapperQueryParser.java:848)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:227)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:256)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:303)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:206)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:201)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 10 more
+[2021-02-12 16:30:13,883][DEBUG][action.search.type       ] [default-node] All shards failed for phase: [query_fetch]
+RemoteTransportException[[default-node][127.0.0.1:9300][indices:data/read/search[phase/query+fetch]]]; nested: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"id:￠ﾸﾖ￠ﾸﾄ","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: NumberFormatException[For input string: "￠ﾸﾖ￠ﾸﾄ"];
+Caused by: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"id:￠ﾸﾖ￠ﾸﾄ","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: NumberFormatException[For input string: "￠ﾸﾖ￠ﾸﾄ"];
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:853)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:653)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:618)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:461)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:392)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:389)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NumberFormatException: For input string: "￠ﾸﾖ￠ﾸﾄ"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.parseLong(Long.java:631)
+	at org.elasticsearch.index.mapper.core.NumberFieldMapper.parseLongValue(NumberFieldMapper.java:296)
+	at org.elasticsearch.index.mapper.core.LongFieldMapper$LongFieldType.indexedValueForSearch(LongFieldMapper.java:164)
+	at org.elasticsearch.index.mapper.MappedFieldType.createTerm(MappedFieldType.java:452)
+	at org.elasticsearch.index.mapper.MappedFieldType.termQuery(MappedFieldType.java:456)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.getFieldQuerySingle(MapperQueryParser.java:250)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.getFieldQuery(MapperQueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.handleBareTokenQuery(QueryParserBase.java:856)
+	at org.apache.lucene.queryparser.classic.QueryParser.Term(QueryParser.java:348)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:247)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:160)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:118)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.parse(MapperQueryParser.java:848)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:227)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:256)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:303)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:206)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:201)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	... 10 more
+[2021-02-12 16:30:13,908][INFO ][rest.suppressed          ] /python-patterns/patterns/_search Params: {q=id:￠ﾸﾖ￠ﾸﾄ, pretty=, index=python-patterns, type=patterns}
+Failed to execute phase [query_fetch], all shards failed; shardFailures {[2uAA3wqDS_-FoOR4DDitCA][python-patterns][0]: RemoteTransportException[[default-node][127.0.0.1:9300][indices:data/read/search[phase/query+fetch]]]; nested: SearchParseException[failed to parse search source [{"query":{"query_string":{"query":"id:￠ﾸﾖ￠ﾸﾄ","lowercase_expanded_terms":true,"analyze_wildcard":false}}}]]; nested: NumberFormatException[For input string: "￠ﾸﾖ￠ﾸﾄ"]; }
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.onFirstPhaseResult(TransportSearchTypeAction.java:228)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction$1.onFailure(TransportSearchTypeAction.java:174)
+	at org.elasticsearch.action.ActionListenerResponseHandler.handleException(ActionListenerResponseHandler.java:46)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.processException(TransportService.java:821)
+	at org.elasticsearch.transport.TransportService$DirectResponseChannel.sendResponse(TransportService.java:799)
+	at org.elasticsearch.transport.TransportService$4.onFailure(TransportService.java:361)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:39)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: [For input string: "￠ﾸﾖ￠ﾸﾄ"]; nested: NumberFormatException[For input string: "￠ﾸﾖ￠ﾸﾄ"];
+	at org.elasticsearch.ElasticsearchException.guessRootCauses(ElasticsearchException.java:386)
+	at org.elasticsearch.action.search.SearchPhaseExecutionException.guessRootCauses(SearchPhaseExecutionException.java:152)
+	at org.elasticsearch.action.search.SearchPhaseExecutionException.getCause(SearchPhaseExecutionException.java:99)
+	at java.lang.Throwable.printStackTrace(Throwable.java:666)
+	at java.lang.Throwable.printStackTrace(Throwable.java:722)
+	at org.apache.log4j.DefaultThrowableRenderer.render(DefaultThrowableRenderer.java:60)
+	at org.apache.log4j.spi.ThrowableInformation.getThrowableStrRep(ThrowableInformation.java:87)
+	at org.apache.log4j.spi.LoggingEvent.getThrowableStrRep(LoggingEvent.java:413)
+	at org.apache.log4j.WriterAppender.subAppend(WriterAppender.java:313)
+	at org.apache.log4j.WriterAppender.append(WriterAppender.java:162)
+	at org.apache.log4j.AppenderSkeleton.doAppend(AppenderSkeleton.java:251)
+	at org.apache.log4j.helpers.AppenderAttachableImpl.appendLoopOnAppenders(AppenderAttachableImpl.java:66)
+	at org.apache.log4j.Category.callAppenders(Category.java:206)
+	at org.apache.log4j.Category.forcedLog(Category.java:391)
+	at org.apache.log4j.Category.log(Category.java:856)
+	at org.elasticsearch.common.logging.log4j.Log4jESLogger.internalInfo(Log4jESLogger.java:125)
+	at org.elasticsearch.common.logging.support.AbstractESLogger.info(AbstractESLogger.java:90)
+	at org.elasticsearch.rest.BytesRestResponse.convert(BytesRestResponse.java:131)
+	at org.elasticsearch.rest.BytesRestResponse.<init>(BytesRestResponse.java:96)
+	at org.elasticsearch.rest.BytesRestResponse.<init>(BytesRestResponse.java:87)
+	at org.elasticsearch.rest.action.support.RestActionListener.onFailure(RestActionListener.java:60)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.raiseEarlyFailure(TransportSearchTypeAction.java:316)
+	... 10 more
+Caused by: java.lang.NumberFormatException: For input string: "￠ﾸﾖ￠ﾸﾄ"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:589)
+	at java.lang.Long.parseLong(Long.java:631)
+	at org.elasticsearch.index.mapper.core.NumberFieldMapper.parseLongValue(NumberFieldMapper.java:296)
+	at org.elasticsearch.index.mapper.core.LongFieldMapper$LongFieldType.indexedValueForSearch(LongFieldMapper.java:164)
+	at org.elasticsearch.index.mapper.MappedFieldType.createTerm(MappedFieldType.java:452)
+	at org.elasticsearch.index.mapper.MappedFieldType.termQuery(MappedFieldType.java:456)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.getFieldQuerySingle(MapperQueryParser.java:250)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.getFieldQuery(MapperQueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.handleBareTokenQuery(QueryParserBase.java:856)
+	at org.apache.lucene.queryparser.classic.QueryParser.Term(QueryParser.java:348)
+	at org.apache.lucene.queryparser.classic.QueryParser.Clause(QueryParser.java:247)
+	at org.apache.lucene.queryparser.classic.QueryParser.Query(QueryParser.java:171)
+	at org.apache.lucene.queryparser.classic.QueryParser.TopLevelQuery(QueryParser.java:160)
+	at org.apache.lucene.queryparser.classic.QueryParserBase.parse(QueryParserBase.java:118)
+	at org.apache.lucene.queryparser.classic.MapperQueryParser.parse(MapperQueryParser.java:848)
+	at org.elasticsearch.index.query.QueryStringQueryParser.parse(QueryStringQueryParser.java:227)
+	at org.elasticsearch.index.query.QueryParseContext.parseInnerQuery(QueryParseContext.java:256)
+	at org.elasticsearch.index.query.IndexQueryParserService.innerParse(IndexQueryParserService.java:303)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:206)
+	at org.elasticsearch.index.query.IndexQueryParserService.parse(IndexQueryParserService.java:201)
+	at org.elasticsearch.search.query.QueryParseElement.parse(QueryParseElement.java:33)
+	at org.elasticsearch.search.SearchService.parseSource(SearchService.java:836)
+	at org.elasticsearch.search.SearchService.createContext(SearchService.java:653)
+	at org.elasticsearch.search.SearchService.createAndPutContext(SearchService.java:618)
+	at org.elasticsearch.search.SearchService.executeFetchPhase(SearchService.java:461)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:392)
+	at org.elasticsearch.search.action.SearchServiceTransportAction$SearchQueryFetchTransportHandler.messageReceived(SearchServiceTransportAction.java:389)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	... 3 more
+[2021-02-12 17:25:04,156][INFO ][node                     ] [default-node] stopping ...
+[2021-02-12 17:25:04,187][INFO ][node                     ] [default-node] stopped
+[2021-02-12 17:25:04,188][INFO ][node                     ] [default-node] closing ...
+[2021-02-12 17:25:04,192][INFO ][node                     ] [default-node] closed
