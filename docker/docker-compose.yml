@@ -28,16 +28,17 @@ services:
     environment:
       - node.name=ted
       - discovery.seed_hosts=esdb
+      - URL
     entrypoint: ["/bin/sh","-c"]
     command:
     - |
-      /home/teddy/Teddy-plus/detection-mode/AutoRun.sh https://github.com/gqlo/data_mining.git /home/teddy/results repo
+      /home/teddy/Teddy-plus/detection-mode/AutoRun.sh ${URL} /home/teddy/results repo
     volumes:
       - csv_data:/home/teddy/results
 
 volumes:
   csv_data:
-    driver: local 
+    driver: local
 
 networks:
   app_net:
