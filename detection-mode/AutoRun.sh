@@ -72,8 +72,8 @@ git checkout $gitclonedhead
 ((commitNo=commitNo+1))
 done
 ## Deleting the repo folder after iteration is completed
-cd ..
-rm -r */
+#cd ..
+#rm -r */
 ## echo or run tatts scrip
 
 # Calling shell script that runs bokeh visualization
