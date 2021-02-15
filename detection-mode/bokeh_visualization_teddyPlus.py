@@ -2,6 +2,7 @@ import sys
 import csv
 import os
 import glob
+import ast
 import pandas as pd
 import numpy as np
 from math import pi
@@ -45,9 +46,9 @@ def extract_and_seperate(path,outIdiomatic,outNonidiomatic):
     
     # Creating the header row for outIdiomatic and outNonidiomatic
     with open(outIdiomatic, 'w', newline='') as idiomaticCSV:
-        print("CommitNO,CommitID,fileName,methodName,startLine,endLine,style,idiomName,color,marker",file=idiomaticCSV)
+        print("CommitNO|CommitID|fileName|methodName|startLine|endLine|style|idiomName|color|marker",file=idiomaticCSV)
     with open(outNonidiomatic, 'w', newline='') as nonidiomaticCSV:
-        print("CommitNO,CommitID,fileName,methodName,startLine,endLine,style,idiomName,color,marker,recommend",file=nonidiomaticCSV)
+        print("CommitNO|CommitID|fileName|methodName|startLine|endLine|style|idiomName|color|marker|recommend",file=nonidiomaticCSV)
     
     for f in siameseCSVsFiles:
 
@@ -122,7 +123,8 @@ def extract_and_seperate(path,outIdiomatic,outNonidiomatic):
             # if it's a NPI, add recommendPattern first then append to outNonidiomatic.csv
             if processed_row[6] == 'pi':
                 with open(outIdiomatic,'a',newline='') as outIdiomaticCSV:
-                    print(processed_row,file=outIdiomaticCSV)
+                    processed_row_string = '|'.join(processed_row)
+                    print(processed_row_string,file=outIdiomaticCSV)
             else:
                 # Extract the recommendation pattern
                 recommend_pattern = path_pattern.split('#')
@@ -133,27 +135,109 @@ def extract_and_seperate(path,outIdiomatic,outNonidiomatic):
 
                 # Append the completed processed_row to outNonidiomatic
                 with open(outNonidiomatic,'a',newline='') as outNonidiomaticCSV:
-                    print(processed_row,file=outNonidiomaticCSV)
+                    processed_row_string = '|'.join(processed_row)
+                    print(processed_row_string,file=outNonidiomaticCSV)
             
 
-def plot(idiomaticCSV,nonidiomaticCSV):
+def plot_graph(idiomaticCSV,nonidiomaticCSV,siameseCSVsloc):
+
+    outputHTMLpath = siameseCSVsloc+"/myplot_d.html"
+    plot.output_file(outputHTMLpath)
+
+    idiomin = pd.read_csv(idiomaticCSV,sep='|')
+    nonidiomin = pd.read_csv(nonidiomaticCSV,sep='|')
+
+    sourceipy = ColumnDataSource(data=dict(
+        commitNOipy = idiomin['CommitNO'],
+        commitIDipy = idiomin['CommitID'].astype('str'),
+        fnameipy =  idiomin['fileName'].astype('str'),
+        methodNameipy = idiomin['methodName'].astype('str'),
+        startLineipy = idiomin['startLine'],
+        endLineipy = idiomin['endLine'],
+        styleipy = idiomin['style'].astype('str'),
+        inameipy = idiomin['idiomName'].astype('str'),
+        coloripy = idiomin['color'].astype('str'),
+        markeripy = idiomin['marker'].astype('str')
+    ))
+
+    sourcenipy = ColumnDataSource(data=dict(
+        commitNOnipy = nonidiomin['CommitNO'],
+        commitIDnipy = nonidiomin['CommitID'].astype('str'),
+        fnamenipy =  nonidiomin['fileName'].astype('str'),
+        methodNamenipy = nonidiomin['methodName'].astype('str'),
+        startLinenipy = nonidiomin['startLine'],
+        endLinenipy = nonidiomin['endLine'],
+        stylenipy = nonidiomin['style'].astype('str'),
+        inamenipy = nonidiomin['idiomName'].astype('str'),
+        colornipy = nonidiomin['color'].astype('str'),
+        markernipy = nonidiomin['marker'].astype('str'),
+        recommendnipy = nonidiomin['recommend'].astype('str').replace('\\n','\n').replace('\\t','\t')
+    ))
+
+    filename = (idiomin['fileName'] + nonidiomin['fileName']).unique().astype('str')
+
+    p = plot.figure(y_range = filename, plot_width = 1500,title="Overview of Good and Pattern Python Code Patterns",tools=['wheel_zoom','pan','reset'])
+
+    ip_plot = p.scatter(
+                x='commitNOipy',
+                y=jitter('fnameipy',width=0.1, range=p.y_range),
+                marker = 'markeripy',
+                size = 10,
+                source=sourceipy,
+                color='coloripy',
+                alpha= 0.2,
+                legend_label='Idiomatic (IP)'
+    )
+    ip_hover = HoverTool(
+        tooltips=[
+            ("Commit ID","@commitIDipy"),
+            ("File name","@fnameipy"),
+            ("Method name","@methodNameipy"),
+            ("Method startline","@startLineipy"),
+            ("Method endline","@endLineipy"),
+            ("Style","@styleipy"),
+            ("Idiom name","@inameipy")         
+        ],
+        renderers=[ip_plot]
+    )
+    p.add_tools(ip_hover)
     
+    nip_plot = p.scatter(
+                x='commitNOnipy',
+                y=jitter('fnamenipy', width=0.1, range=p.y_range),
+                marker = 'markernipy',
+                size = 10,
+                source=sourcenipy,
+                color='colornipy',
+                alpha=0.2,
+                legend_label='Nonidiomatic (NIP)'
+    )
+
+    nip_hover = HoverTool(
+        tooltips=[
+            ("Commit ID","@commitIDnipy"),
+            ("File name","@fnamenipy"),
+            ("Method name","@methodNamenipy"),
+            ("Method startline","@startLinenipy"),
+            ("Method endline","@endLinenipy"),
+            ("Style","@stylenipy"),
+            ("Idiom name","@inamenipy"),          
+            ("Recommend pattern","@recommendnipy")          
+        ],
+        renderers=[nip_plot]
+    )
+    p.add_tools(nip_hover)
+
+    p.yaxis.axis_label = "File Name"
+    p.xaxis.axis_label = "Commit Number"
+    p.legend.location = "top_right"
+    p.legend.click_policy = 'hide'
+    plot.show(p)
+
 siamese_input = str(sys.argv[1])
 out_idiomatic_csv = str(sys.argv[2])
 out_nonidiomatic_csv = str(sys.argv[3])
 
 extract_and_seperate(siamese_input,out_idiomatic_csv,out_nonidiomatic_csv)
-# plot()
-
-
-
-
-
-
-
-
-            
-            
-            
-
+plot_graph(out_idiomatic_csv,out_nonidiomatic_csv,siamese_input)
 
