@@ -136,6 +136,8 @@ def extract_and_seperate(path,outIdiomatic,outNonidiomatic):
                     print(processed_row,file=outNonidiomaticCSV)
             
 
+def plot(idiomaticCSV,nonidiomaticCSV):
+    
 siamese_input = str(sys.argv[1])
 out_idiomatic_csv = str(sys.argv[2])
 out_nonidiomatic_csv = str(sys.argv[3])
