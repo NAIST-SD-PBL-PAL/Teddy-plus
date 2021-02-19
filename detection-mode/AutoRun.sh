@@ -1,27 +1,26 @@
 #!/bin/bash
 echo $#
 
-
 if [ "$1" != "" ]; then
-    echo 'GitHub Repo To Clone =' $1
+    echo "[TeddyPlus] GitHub Repo To Clone =" $1
     cloneRepo=$1
 else
-    echo "parameter 1 is empty"
+    echo "[TeddyPlus:ERROR] Parameter 1 is empty"
 fi
 if [ "$2" != "" ]; then
     location=$2
-	echo 'Output Result Location =' $2
+	echo "[TeddyPlus] Output Result Location =" $2
 else
-    echo "parameter 2 is empty"
+    echo "[TeddyPlus:ERROR] parameter 2 is empty"
 fi
 if [ "$3" != "" ]; then
-	echo 'Elasticsearch index name =' $3
+	echo "[TeddyPlus] Repository name =" $3
     index=$3
 else
-    echo "parameter 3 is empty"
+    echo "[TeddyPlus:ERROR] Parameter 3 is empty"
 fi
-git clone $cloneRepo
-cd */.
+git clone $cloneRepo && cd "$(basename "$_" .git)"
+echo $(pwd)
 for OPT in "$@"
 do
     case $OPT in
@@ -43,21 +42,25 @@ gitclonedhead=$(git symbolic-ref --short HEAD)
 commitCommand="git log --oneline --pretty=format:\"%h;\""
 if [ "$after" ]; then
     commitCommand=$commitCommand$after
-else
-    echo "no option for after"
 fi
 if [ "$before" ]; then
     commitCommand=$commitCommand$before
-else
-    echo "no option for before"
 fi
-commit=${commitCommand}
 echo $commitCommand
+commit=$($commitCommand)
+echo $commit
 commitarray=(${commit//;/})
+echo $commitarrayi
+commit_count=${#commitarray[@]}
+if [ $commit_count == "0" ]; then
+    echo "There are no commits."
+else
+    echo "There are some commits."
+fi
 commitNo=0
 for ((i=${#commitarray[@]};i>0;i--))
 do
-echo "Commit#$i ID:${commitarray[$i]} >> Starting search"
+echo "[TeddyPlus] Commit#$i ID:${commitarray[$i]} >> Starting search"
 
 git checkout ${commitarray[$i]}
 # Calling shell script that runs Siamese.jar, perform indexing and searching
@@ -72,8 +75,10 @@ git checkout $gitclonedhead
 ((commitNo=commitNo+1))
 done
 ## Deleting the repo folder after iteration is completed
+
 #cd ..
 #rm -r */
+
 ## echo or run tatts scrip
 
 # Calling shell script that runs bokeh visualization
