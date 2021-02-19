@@ -255,13 +255,11 @@ def plot_graph(idiomaticCSV,nonidiomaticCSV,siameseCSVsloc):
 siamese_input = str(sys.argv[1])
 out_idiomatic_csv = str(sys.argv[2])
 out_nonidiomatic_csv = str(sys.argv[3])
-
-extract_and_seperate(siamese_input,out_idiomatic_csv,out_nonidiomatic_csv)
-plot_graph(out_idiomatic_csv,out_nonidiomatic_csv,siamese_input)
-
 print("[TeddyPlus] Starting visualization using Bokeh ...")
 print("[TeddyPlus] ***Configuration***")
 print("[TeddyPlus] Siamese's CSV files location: ", str(sys.argv[1]))
 print("[TeddyPlus] Idiomatic CSV: ", str(sys.argv[2]))
 print("[TeddyPlus] Nonidiomatic CSV: ", str(sys.argv[3]))
-print("[TeddyPlus] Your plot is ready. See "+siamese_input+"teddyPlus_result.html")
+extract_and_seperate(siamese_input,out_idiomatic_csv,out_nonidiomatic_csv)
+plot_graph(out_idiomatic_csv,out_nonidiomatic_csv,siamese_input)
+print("[TeddyPlus] Your plot is ready. See "+siamese_input+"/teddyPlus_result.html")
