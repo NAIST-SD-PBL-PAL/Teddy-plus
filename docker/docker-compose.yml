@@ -1,0 +1,50 @@
+services:
+  elasticsearch:
+    image: meandthefirefly/elastic
+    container_name: esdb
+    user: teddy
+    environment:
+      - node.name=esdb
+      - cluster.name=teddy-linux
+      - discovery.seed_hosts=ted
+    command: ifconfig
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.10
+    ports:
+      - "9200:9200"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+    - |
+      /home/teddy/elastic/bin/elasticsearch
+
+  ted-client:
+    image: meandthefirefly/teddy-client
+    container_name: ted
+    command: ifconfig
+    networks:
+       app_net:
+         ipv4_address: 172.16.238.13
+    environment:
+      - node.name=ted
+      - discovery.seed_hosts=esdb
+      - URL
+    entrypoint: ["/bin/sh","-c"]
+    command:
+    - |
+      /home/teddy/Teddy-plus/detection-mode/AutoRun.sh ${URL} /home/teddy/results repo ${INTERVAL}
+    volumes:
+      - csv_data:/home/teddy/results
+
+volumes:
+  csv_data:
+    driver: local
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
+          gateway: 172.16.238.1
