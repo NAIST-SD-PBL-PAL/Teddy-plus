@@ -20,8 +20,8 @@ if [ "$3" != "" ]; then
 else
     echo "parameter 3 is empty"
 fi
-git clone $cloneRepo
-cd */.
+git clone $cloneRepo && cd "$(basename "$_" .git)"
+echo $(pwd)
 for OPT in "$@"
 do
     case $OPT in
@@ -43,17 +43,21 @@ gitclonedhead=$(git symbolic-ref --short HEAD)
 commitCommand="git log --oneline --pretty=format:\"%h;\""
 if [ "$after" ]; then
     commitCommand=$commitCommand$after
-else
-    echo "no option for after"
 fi
 if [ "$before" ]; then
     commitCommand=$commitCommand$before
-else
-    echo "no option for before"
 fi
-commit=${commitCommand}
 echo $commitCommand
+commit=$($commitCommand)
+echo $commit
 commitarray=(${commit//;/})
+echo $commitarrayi
+commit_count=${#commitarray[@]}
+if [ $commit_count == "0" ]; then
+    echo "There are no commits."
+else
+    echo "There are some commits."
+fi
 commitNo=0
 for ((i=${#commitarray[@]};i>0;i--))
 do
@@ -73,7 +77,8 @@ git checkout $gitclonedhead
 done
 ## Deleting the repo folder after iteration is completed
 cd ..
-rm -r */
+echo $(pwd)
+# rm -r */
 ## echo or run tatts scrip
 
 # Calling shell script that runs bokeh visualization
