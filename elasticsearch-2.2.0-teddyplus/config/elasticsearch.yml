@@ -20,7 +20,7 @@
 #
 # Use a descriptive name for the node:
 #
-node.name: default-node
+node.name: teddyplus
 #
 # Add custom attributes to the node:
 #
