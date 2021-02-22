@@ -5,11 +5,12 @@ A repo for the Teddy tool.
 - Elasticsearch **2.2.0**
 - Apache Maven 3.6.3 or higher
 
-## Setting up Elasticsearch 2.2.0
-1. In `.\config\elasticsearch.yml` file of Elasticsearch folder, add `index.query.bool.max_clause_count: 20480` and `action.auto_create_index: .marvel-*` to the file. Save and close the file.
-
-1. Using `cmd` or PowerShell Go to `.\bin` directory of your local Elasticsearch folder.
-2. Execute `.\elasticsearch` command to run an Elasticsearch instance.
+## Setting up Elasticsearch 2.2.0 and restore the python-patterns index
+1. In `~/elasticsearch-2.2.0-teddyplus/config/elasticsearch.yml`, specify the absolute path to the snapshot folder as follow `path.repo: <REPO_FOLDER>/elasticsearch-2.2.0-teddyplus/snapshot/backups`
+2. Save the config file and launch the Elastic server (`.~/elasticsearch-2.2.0-teddyplus/bin/elasticsearch`)
+3. Bind the repo path to the running ES via JSON API as follow: curl -XPUT `localhost:9200/_snapshot/backups?pretty' -d '{"type":"fs","settings":{"location":"<SAME_PATH_AS_path.repo>"},"compress":true}}'`
+4. Restore the snapshot of __python-patterns__ index to the running Elastic using API: `curl -XPOST 'localhost:9200/_snapshot/backups/snapshot_1/_restore?pretty'`
+5. (Optional) Check that the __python-patterns__ index has been restored in the Elastic using API: `curl -XGET 'localhost:9200/_cat/indices?pretty'`
 
 ## Setting up Teddy
 1. Use `git clone` to make a local copy of this branch on your machine, or download this branch as a `.zip` package and extract it.
