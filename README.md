@@ -11,7 +11,7 @@ A repo for the Teddy tool.
 `path.repo: <CLONED_REPO_FOLDER>/elasticsearch-2.2.0-teddyplus/snapshot/backups`
 2. Save the config file and launch the Elastic server (`.~/elasticsearch-2.2.0-teddyplus/bin/elasticsearch`)
 3. Bind the snapshot folder to the running Elastic via API: 
-`curl -XPUT localhost:9200/_snapshot/backups?pretty' -d '{"type":"fs","settings":{"location":"<SAME_PATH_AS_path.repo>"},"compress":true}}'`
+`curl -XPUT 'localhost:9200/_snapshot/backups?pretty' -d '{"type":"fs","settings":{"location":"<SAME_PATH_AS_path.repo>"},"compress":true}}'`
 4. Restore the snapshot of __python-patterns__ index to the running Elastic using API: 
 `curl -XPOST 'localhost:9200/_snapshot/backups/snapshot_1/_restore?pretty'`
 5. (Optional) Check that the __python-patterns__ index has been restored in the Elastic using API: 
