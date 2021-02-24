@@ -1,10 +1,10 @@
 services:
   elasticsearch:
-    image: meandthefirefly/elastic
+    image: meandthefirefly/elastic_p
     container_name: esdb
     user: teddy
     environment:
-      - node.name=esdb
+      - node.name=teddyplus
       - cluster.name=teddy-linux
       - discovery.seed_hosts=ted
     command: ifconfig
@@ -19,7 +19,7 @@ services:
       /home/teddy/elastic/bin/elasticsearch
 
   ted-client:
-    image: meandthefirefly/teddy-client
+    image: meandthefirefly/teddy-client_p
     container_name: ted
     command: ifconfig
     networks:
@@ -32,7 +32,7 @@ services:
     entrypoint: ["/bin/sh","-c"]
     command:
     - |            
-      cd /home/teddy/Teddy-plus/detection-mode
+      cd /home/teddy/client
       ./AutoRun.sh ${URL} /home/teddy/results repo ${INTERVAL}
     volumes:
       - csv_data:/home/teddy/results
