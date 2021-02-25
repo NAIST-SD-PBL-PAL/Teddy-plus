@@ -15,12 +15,6 @@
 # Searching in the newly created ES index using the idiom/non-idiom Python snippets
 # '-n' is a new command-line overriding parameter of .jar for index in config.properties
 echo "[TeddyPlus] Commit#$6 ID:$5 >> Search started"
-<<<<<<< HEAD
-java -jar ./../siamese-teddyplus.jar -cf ./../config-teddyplus.properties -c search -i $1 -o $3 -n $4 -g $5 -t $6
-
-echo "[TeddyPlus] Commit#$6 ID:$5 >> Search completed"
-=======
 java -jar /home/teddy/client/siamese-teddyplus.jar -cf /home/teddy/client/config-teddyPlus.properties -c search -i $1 -o $3 -n $4 -g $5 -t $6
 
 echo "[TeddyPlus] Commit#$6 ID:$5 >> Search completed"
->>>>>>> d9700ba... use absolute path
