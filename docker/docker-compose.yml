@@ -35,7 +35,7 @@ services:
       cd /home/teddy/client
       ./AutoRun.sh ${URL} /home/teddy/results repo ${INTERVAL}
     volumes:
-      - csv_data:/home/teddy/results
+      - /home/x1/Teddy-plus/results:/home/teddy/results
 
 volumes:
   csv_data:
